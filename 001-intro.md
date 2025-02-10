@@ -33,7 +33,27 @@ Now that I have succesfully pushed away potential readers whom may have thought 
 3. Take joy in creating solutions for _Problem $X$_ instead of merely complaining that a solution does not exist
 
 
+## With what few scraps of junk?
 
-TODO: Below feels like it belongs in the next section
 
-Yes, it does not matter whether the computer in question is not the latest edition, missing these hardware accelerators or produced in the last two years - it really does not. The quicker you realise the potential inherent in all modern computers of the last decade and what the right guidance can provide - you shall immediately start imagining all the potential use cases for old hardware and, more importantly, be able to create something for yourself and maybe your wider community that actually makes a real impact.
+There is way more one can do with an old router that was going to be thrown out or the desktop personal computer that dad hasn't seen a need for in the last 3 years. Hell, even your smartphone - your _current_ smartphone can be put to more than just a single use case.
+
+You'll be amazed at the potential that lies within all of these devices we've just mentioned _despite_ their rather mediocre appearances. It should come as no surpprise when you learn that was a "TP Link WR whatever...." is ibfact no different to that of your dad's abaondoned computer. These devices are different under the hood but at the end of the day, are all compyters. That means they are generic enough to perform any computational task you may have.
+
+But what could one accomplish with this? I have seemingly just glossed over some theory stating the obvious: "Yes your home router is infact a computer", "Computers can compute anything". Realistically, stating this just informs the public that there exists a group of individuals that have the technical know-how to re-purpose these devices. **Where does that leave the layman?**
+
+And that's totally valid to ask. Where indeed _does_ this leave the layman. We may as well continue with our lives and let computer scientists and the lot handle these things, _right?_ Well, it leaves the layman where he has always been either he has an interest and is doing what he can to learn (such as by getting this book) or he simply has no interest. This book aims to help you, the layman, understand computer hardware and software in order for you to make use of what you have laying around.
+
+I like to think of it like this. What good are all the chemicals beneath your kitchen sink if you don't have the _Anarchist's Cookbook_? Now replace the _chemicals_ with computer hardware and the _Anarchist's Cookbook_ with this book.
+
+
+\notebox{Anarchy? Chemicals? Are these not things associated with extremist groups? Well, yes, if the current norm is against those things. This does not however preclude them from being \textit{ethical} - which is one of the focus points of this book.}
+
+
+The quicker you realise the potential inherent in all modern computers of the last decade and what the right guidance can provide - you shall immediately start imagining all the potential use cases for old hardware and, more importantly, be able to create something for yourself and maybe your wider community that actually makes a real impact.
+
+\vfill
+
+I hope you enjoy this book as much I enjoyed the multiple months of research required. This book is as much a guide for you as it is for me when I was learning things that even I had not heard of before.
+
+God bless.
