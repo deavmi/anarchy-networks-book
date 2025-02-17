@@ -21,3 +21,7 @@ This constraint allows us to consider various places of installation via various
 * Solar energy
     * If we are able to buy a cheap solar panel that supplies the needed voltage then we can make use of what is _in effect_ free energy.
     * The even _more appealing_ aspect of solar is that it means you can place setup operation in a remote location where there is no wiring available - this allows reaching places one would never be able to do otherwise. It is not necessarily the case that one cares all too much for deploying something on a mountain top for some bushman living _there_ but rather because it may be a useful vantage point to connect people on either side of the mountain range.
+* Battery operable
+    * This constraint _also_ implies that one should be able to build what we shall build in a manner that it is also portable. A solar panel _can_ count here as well but is not practical when sunshine is amiss.
+    * Something which can be powered off of a laptop or other sources such as ones phone or an external battery bank is a preferable solution.
+
