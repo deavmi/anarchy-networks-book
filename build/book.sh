@@ -1,5 +1,5 @@
 #!/bin/bash
-pandoc *.md communications/* \
+pandoc *.md communications/*.md \
         --from Markdown \
         --to pdf \
         -o book.pdf \
