@@ -77,3 +77,30 @@ Mixing the above with the security aspect means that $A$ should be able to send 
 This must ensure that $B$ cannot (to a good degree) be spoofed by some <u>other</u> node that is posing to pose as the _real_ node $B$. Likewise it should be entirely permissionless when any of the nodes shown come online; they should be able to peer with neighboring nodes automatically without user intervention on either nodes' part _or_ the wider network as a whole. This last part is important as well, one should be able to announce whatever services their node is making available to the wider network. Such announcements should then be picked up by each node and stored so that they are aware of such a node's service and how to securely route towards it.
 
 The network should also be _reactive_ (or maybe dynamic is a bettwr word) to changing network conditions. If a better route is found then it should be used _or_ if certain nodes go offline then any route which used it should, in a short period of time, be reconfigured to fix itself so that the data can be routed via some _other_ node to its eventual destination. This is not only a requirement for s concern as simple as "My node went offline" but rather to take into account that mobile nodes are part and parcel of such a network we want to build and their physical location often affects routing updates more frquently than that of, say, a laptop at home - something which is in a fixed position.
+
+#### Generic
+
+The system should be generic in that it should not solve only one medium or use-case of communication. WHat is meant by this is that one should be able to send _arbitrary data_ - this can be files, text, images and maybe even some voice notes. We'll clarify later as to why some of these might not be reasonably possible but the idea stands that it should be a generic network. This would mean that I could use it to perhaps send signaling requests to my gate opener and have some application on the other side receive such a request, open my gate and send a reply. At the same time, there should be the ability to build more general chat-like applications on top of the network which would allow for people to make use of it in a way which is rather common these days.
+
+### Summary before we begin
+
+We have discussed the ideas here of what we may want in our solution to building a network. We need something that has the ability to easily have a far reach in terms of network coverage whilst also using a minimal amount of power. The solution used will also have to be able to route data on behalf of others and do so in a secure manner where endpoints are verifiable and the data in transit is encrypted end-to-end. Along with this the network needs to be dynamic in that nodes can come and go from the network _without_ permission and _without_ breaking the network entirely - the network **must** automatically adapt to such changes - without any intervention from its users.
+
+A good question may be:
+
+>"How fast (or slow) need the network be?"
+
+Voila! For this particular scenario we want a network that is high-latency and low-throughput. You will see it won't be entirely true but for the use case we want to accomplish and with our constraints posed - this will be the most likely output.
+
+Here are some use cases:
+
+1. SOS system
+2. Device remote control
+3. Metrics gathering (think sensor networks)
+4. A high-latency e-mail system
+    * If one thinks about this use case it should not come entirely as a surprise to users of emails in the early days.
+    * There is still a use case for people who need to message each other with _not-so-urgent_ messages that they can have automatically download or download when they decide to hit some "Send/Receive" button.
+
+### Implementation
+
+TODO: Discuss reticulum here
