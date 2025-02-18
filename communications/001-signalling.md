@@ -25,7 +25,7 @@ This constraint allows us to consider various places of installation via various
     * This constraint _also_ implies that one should be able to build what we shall build in a manner that it is also portable. A solar panel _can_ count here as well but is not practical when sunshine is amiss.
     * Something which can be powered off of a laptop or other sources such as ones phone or an external battery bank is a preferable solution.
 
-#### Realistic _sconnections_
+#### Realistic _connections_
 
 Such a project involving the fashioning of devices that are to be connected physically (hint: wirelessly) to one another has a problem when one is starting out such a project. Call yourself person $A$ and your potential friend, who wants to join in on this project with you, $B$. There is however, one problem you are far apart from one another albeit in the same town.
 
@@ -38,3 +38,6 @@ The reason I say "_for now"_ is because once more people get involved they could
 ![](communications/drawings/lack_of_line_of_sight.drawio.pdf)
 
 However, because we are starting the network from scratch we cannot jump to such an assumption that we will have so many involved on day one, we must be realistic.
+
+Therefore we have reached a new sub-effective constraint from this which is that we need to use some technology that is **long-range**. Both for the fact that is may otherwise be impossible for $A$ to reach $B$ in our aforementioned scenario but also because the side-effect is that the coverage we gain from this may reach other peoples' homes which may be our potential new members. We're really hitting two birds with one stone.
+
