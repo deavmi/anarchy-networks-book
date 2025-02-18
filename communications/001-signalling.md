@@ -69,3 +69,11 @@ This boils down to two things:
     * It should not be a difficult process for someone to join the network. What we mean by this isn't that configuration should be banished _completely_ but rather that an operator of a node would only need to setup the communication interfaces he wants **once** and then anyone who wants to use it should be able to.
     * The node latter operator can control this obviously but the idea I am trying to hammer-in here is that for every new node that $A$ could potentially peer with over the _same interface_ should not require an additional configuration option for _every_ new node that could connect to it.
 
+Mixing the above with the security aspect means that $A$ should be able to send data to $B$ securely and have $D$, $E$ or $F$ (whatever the combinations may be) route it towards the destination, $B$.
+
+![](communications/drawings/routing.drawio.png)
+
+<!-- underline please -->
+This must ensure that $B$ cannot (to a good degree) be spoofed by some <u>other</u> node that is posing to pose as the _real_ node $B$. Likewise it should be entirely permissionless when any of the nodes shown come online; they should be able to peer with neighboring nodes automatically without user intervention on either nodes' part _or_ the wider network as a whole. This last part is important as well, one should be able to announce whatever services their node is making available to the wider network. Such announcements should then be picked up by each node and stored so that they are aware of such a node's service and how to securely route towards it.
+
+The network should also be _reactive_ (or maybe dynamic is a bettwr word) to changing network conditions. If a better route is found then it should be used _or_ if certain nodes go offline then any route which used it should, in a short period of time, be reconfigured to fix itself so that the data can be routed via some _other_ node to its eventual destination. This is not only a requirement for s concern as simple as "My node went offline" but rather to take into account that mobile nodes are part and parcel of such a network we want to build and their physical location often affects routing updates more frquently than that of, say, a laptop at home - something which is in a fixed position.
