@@ -29,13 +29,13 @@ This constraint allows us to consider various places of installation via various
 
 Such a project involving the fashioning of devices that are to be connected physically (hint: wirelessly) to one another has a problem when one is starting out such a project. Call yourself person $A$ and your potential friend, who wants to join in on this project with you, $B$. There is however, one problem you are far apart from one another albeit in the same town.
 
-![](communications/drawings/comms_distance_people.drawio.pdf)
+![](communications/drawings/comms_distance_people.drawio.png)
 
 So we must have a situation where at the very least $A$ and $B$ have line of sight with one another, meaning that if they were to stand on top of their rooves they could see one another. This is, at least where I live, something almost all houses have. The problem now simply becomes the distance of the straight line between $A$ and $B$ - we need some technology that can **for now** bridge this gap.
 
 The reason I say "_for now"_ is because once more people get involved they could setup devices in between people $F$ and $E$ who otherwise would not be able to see each other in a line-of-sight fashion _but_ who can both see person $D$:
 
-![](communications/drawings/lack_of_line_of_sight.drawio.pdf)
+![](communications/drawings/lack_of_line_of_sight.drawio.png)
 
 However, because we are starting the network from scratch we cannot jump to such an assumption that we will have so many involved on day one, we must be realistic.
 
@@ -69,4 +69,3 @@ This boils down to two things:
     * It should not be a difficult process for someone to join the network. What we mean by this isn't that configuration should be banished _completely_ but rather that an operator of a node would only need to setup the communication interfaces he wants **once** and then anyone who wants to use it should be able to.
     * The node latter operator can control this obviously but the idea I am trying to hammer-in here is that for every new node that $A$ could potentially peer with over the _same interface_ should not require an additional configuration option for _every_ new node that could connect to it.
 
-    
