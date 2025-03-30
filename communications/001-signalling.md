@@ -138,10 +138,33 @@ WiFi has many different ways of operating however the most common way, especiall
 
 The devices are _associated_ with the same access point, this means that data packets travel from `A` to `B` _via_ the access point `AP` however the way the devices (`A` and `B` see the network from their point of view) is that of the logical link (as shown in the diagram). `A` believes it is directly connected to `B` and vice-versa.
 
+If we know this then it really simplifies our diagram to this:
+
+![](communications/drawings/disco_oneline.drawio.png)
+
+\notebox{What are the \texttt{wlan0} labels in this diagram? Well, if you recall our talk about interfaces earlier these are, in this case, the WiFi interface names on either node. So here node \texttt{A} has a WiFi interface called \texttt{wlan0} and node \texttt{B} also has a WiFi interface similarly named \texttt{wlan0}.}
+
+This is the first step in realizing that if we simply place two devices, running the Reticulum software, onto the same LAN (local area network) or WLAN (wireless area network) then we can have them automatically discover each other and start communicating.
+
+TODO: Add config for `A` and `B` here
+
+Now, let's say that node `B` also happens to be on _another_ network, let's say it is plugged into an Ethernet cable that travels over the wall into his neighbors network, of which a third node named `C` is now available.
+
+\importantbox{Please get permission from your neighbor to trunk an Ethernet cable into his yard. You cannot just start digging on somebody else's property. Plus, if you ask then you can get him interested in what you are trying to accomplish anyways. A network is only fun and useful when others are using it.}
+
+TODO: Diagram showing across multiple LANs with routing (transport nodes) in between
+
+![](communications/drawings/disco_multi_net.drawio.png)
+
+In such a case we have **two** LANs (one WLAN and our neighbors LAN) but because we are running Reticulum on each node `A` can discover `B` (and vice-versa) and `B` can discover `C` (and vice-versa).
+
+TODO: Add config for `B`'s modification here and also general interface configuration for node `C`
+
+TODO: Add "but wait.... what about `A` discovering `C` (and vice-versa)
 
 #### Applications
 
-TODO: Meshchat for laptops and desktops
-TODO: Sideband for mobile phones
-TODO: Nomadnet for hackers
+1. TODO: Meshchat for laptops and desktops
+2. TODO: Sideband for mobile phones
+3. TODO: Nomadnet for hackers
 
