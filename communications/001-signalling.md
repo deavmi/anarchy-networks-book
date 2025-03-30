@@ -104,7 +104,7 @@ Here are some use cases:
 ### Implementation
 
 <!-- <img src="https://reticulum.network/gfx/reticulum_logo_512.png" style="float:right;gap;margin-left:10px;margin-bottom:10px"></img> -->
-![](https://reticulum.network/gfx/reticulum_logo_512.png)
+![Reticulum logo](https://reticulum.network/gfx/reticulum_logo_512.png)
 
 
 We will be implementing our low-power communications network by making use of a piece of software known as [**Reticulum**](https://reticulum.network/) along with a few other sub-components such as hardware like the [**RNode**](https://deavmi.assigned.network/blog/rnode_adventure_part1/) - all of which be described shortly. It must be known that software is normally only 80% of the solution and the rest of 20% hardware. The reason I say 20% is because the first 10% is choosing hardware based on properties like power consumption, modulation techniques and price **but** the second 10% is an easily over-looked one when one gets started building such projects for the very first time. This is the choice that has to be made of which hardware actually _supports the software_ that we choose to run - it's easy to make a mistake here and buy something that you _think_ might work but ends up not working at all.
@@ -134,13 +134,13 @@ Let's consider a common scenario for many users of technology. You may very well
 
 WiFi has many different ways of operating however the most common way, especially in home networks, is that of _"AP mode"_ or _access point mode_. This is a mode whereby you have multiple clients called _stations_ that associate with a given access point. To associate with a WiFi access point means that you will receive any data from the network that access point is connected to, this includes computers connected to the access poijt via wired Ethernet but also other wired devices that may be connected to the same (or different _but connected_) access point.
 
-![](communications/drawings/ap_access.drawio.png)
+![Access point with two clients](communications/drawings/ap_access.drawio.png)
 
 The devices are _associated_ with the same access point, this means that data packets travel from `A` to `B` _via_ the access point `AP` however the way the devices (`A` and `B` see the network from their point of view) is that of the logical link (as shown in the diagram). `A` believes it is directly connected to `B` and vice-versa.
 
 If we know this then it really simplifies our diagram to this:
 
-![](communications/drawings/disco_oneline.drawio.png)
+![Automatic node discovery over a single link](communications/drawings/disco_oneline.drawio.png)
 
 \notebox{What are the \texttt{wlan0} labels in this diagram? Well, if you recall our talk about interfaces earlier these are, in this case, the WiFi interface names on either node. So here node \texttt{A} has a WiFi interface called \texttt{wlan0} and node \texttt{B} also has a WiFi interface similarly named \texttt{wlan0}.}
 
@@ -166,7 +166,7 @@ Now, let's say that node `B` also happens to be on _another_ network, let's say 
 
 TODO: Diagram showing across multiple LANs with routing (transport nodes) in between
 
-![](communications/drawings/disco_multi_net.drawio.png)
+![Diagram of a multi-network setup with B acting as a transport node](communications/drawings/disco_multi_net.drawio.png)
 
 In such a case we have **two** LANs (one WLAN and our neighbors LAN) but because we are running Reticulum on each node `A` can discover `B` (and vice-versa) and `B` can discover `C` (and vice-versa).
 
