@@ -122,6 +122,9 @@ Reticulum is a cryotpgraphically secure mesh routing network that can route data
 2. _"mesh routing network"_
     * It is a _"routing network"_ in the sense that it can move data or _packets_ from point `A` to be `B` where both may be seperated by intermediary nodes `C`, `D` and `E`.
     * The _"mesh"_ aspect is normally to imply more heavily that entry into the network is rather easy and that the routing paths can adapt to new comers easily and _without permission_. That's normally what people mean when they talk about _"mesh"_ in the context of _"mesh networking"_.
+3. _"heterogenous interfaces"_
+    * What is an _"interface"_? An interface is a communications port - a method of which your node can discover and communicate with other nodes. This can be a physical port on your device (like an Ethernet connector), a wireless connection or even a software interface (an overlay network like I2P, Yggdrasil or Tor)
+    * And _"heteregenous"_? Well, we have actually just answered that. Reticulum doesn't just work over one interface type. It can work over a WiFi link or over a Tor connection online - it has **wide support** for different interface types.
 
 \notebox{Technically speaking the Internet, the one you downloaded this book from, send memes over and receive emails via, \textbf{is} a \textit{"mesh"} network. As stated, however, entry into routing on the Internet at the same level as Internet exchanges is not something I would consider permissionless, not even close.}
 
