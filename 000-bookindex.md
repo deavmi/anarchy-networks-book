@@ -1,8 +1,8 @@
 ---
-title: Radical networks
+title: Anarchy networks
 subtitle: _What, why and most importantly how_
 author: Tristan B. Velloza Kildaire
-date: 8th of February 2025
+date: \today
 documentclass: scrbook
 classoption:
   - oneside
