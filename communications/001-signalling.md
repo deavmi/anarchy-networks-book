@@ -148,13 +148,15 @@ If we know this then it really simplifies our diagram to this:
 
 This is the first step in realizing that if we simply place two devices, running the Reticulum software, onto the same LAN (local area network) or WLAN (wireless area network) then we can have them automatically discover each other and start communicating.
 
+\break
+
 In Reticulum this would mean that we would need to write up the following configuration for **both** nodes `A` and `B` under the `[interfaces]` section within the Reticulum configuration file at `~/.reticulum/config`.
 
 So on node `A` add this to your `[interfaces]` section:
 
 ```{.toml .numberLines}
 [interfaces]
-    [[WiFI interface]]
+    [[WiFi interface]]
         type = AutoInterface
         devices = wlan0
         enabled = yes
@@ -164,7 +166,7 @@ And then on node `B`:
 
 ```{.toml .numberLines}
 [interfaces]
-    [[WiFI interface]]
+    [[WiFi interface]]
         type = AutoInterface
         devices = wlan0
         enabled = yes
@@ -180,13 +182,45 @@ Now, let's say that node `B` also happens to be on _another_ network, let's say 
 
 TODO: Diagram showing across multiple LANs with routing (transport nodes) in between
 
-![Diagram of a multi-network setup with B acting as a transport node](communications/drawings/disco_multi_net.drawio.png)
+![Diagram of a multi-network setup with B acting as a transport node](communications/drawings/disco_multi_net.drawio.png){ width=300px }
 
-In such a case we have **two** LANs (one WLAN and our neighbors LAN) but because we are running Reticulum on each node `A` can discover `B` (and vice-versa) and `B` can discover `C` (and vice-versa).
+In such a case we have **two** LANs, the first would be a WLAN (labeled as _"Network 1"_) and the second would be the LAN (labeled _"Network 2"_). Now normally in such a setup the following would be the result (if we applied a similar configuration to our third node  `C`):
 
-TODO: Add config for `B`'s modification here and also general interface configuration for node `C`
+1. Node `A` and `B` would see each other
+2. Node `C` and `B` would see each other
+3. Node `A` and `C` **would NOT** be able to see each other
 
-TODO: Add "but wait.... what about `A` discovering `C` (and vice-versa)
+How would we ensure that `C` and `A` could see each other? Well, we would have to update the configuration of our node `B` so that it can function as a _transport node_. This means that it will forward announcements from that it _"hears"_ on one interface over to other interfaces (i.e. node `B` would forward the announcement message of `A` over to the network that `C` is on therefore allowing `C` to become aware of `A`). We also need to add a _new_ interface to node `B`'s configuration so as to allow it to discover and talk with node `C`.
+
+We can do both of these changes as follows:
+
+```{.toml .numberLines}
+[interfaces]
+    [[WiFi interface]]
+        type = AutoInterface
+        devices = wlan0
+        enabled = yes
+    [[Wired interface]]
+        type = AutoInterface
+        devices = eth0
+        enabled = yes
+[reticulum]
+    enable_transport = True
+```
+
+Notice how we added an additional entry named `[[Wired interface]]` in the `[interfaces]` section. You can add as many of these as you would like and in fact you shall see that as we progress throughout our journey learning Reticulum we shall do exactly that. Enabling of forwarding was accomplished by the `enable_transport` option within the `[reticulum]` section.
+
+\notebox{By default \textit{transport node} mode is disabled by default therefore node \texttt{A} and \texttt{C} will not forward any packets on behalf of others, only \texttt{B} will.}
+
+Of course, our configuration for our new node `C` would appear as follows:
+
+```{.toml .numberLines}
+[interfaces]
+    [[Wired interface]]
+        type = AutoInterface
+        devices = eth0
+        enabled = yes
+```
 
 #### Applications
 
