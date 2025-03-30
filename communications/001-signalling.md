@@ -128,7 +128,7 @@ Reticulum is a cryotpgraphically secure mesh routing network that can route data
 
 \notebox{Technically speaking the Internet, the one you downloaded this book from, send memes over and receive emails via, \textbf{is} a \textit{"mesh"} network. As stated, however, entry into routing on the Internet at the same level as Internet exchanges is not something I would consider permissionless, not even close.}
 
----
+#### Interfaces, links and nodes
 
 Let's consider a common scenario for many users of technology. You may very well have a laptop that you are using to read this book and perhaps you have another one in the house somewhere. Knowing that your laptop is a _wire**less**_ device if would have WiFi functionality built-in to it.
 
@@ -179,8 +179,6 @@ That is quite literally all it takes for such a basic setup.
 Now, let's say that node `B` also happens to be on _another_ network, let's say it is plugged into an Ethernet cable that travels over the wall into his neighbors network, of which a third node named `C` is now available.
 
 \importantbox{Please get permission from your neighbor to trunk an Ethernet cable into his yard. You cannot just start digging on somebody else's property. Plus, if you ask then you can get him interested in what you are trying to accomplish anyways. A network is only fun and useful when others are using it.}
-
-TODO: Diagram showing across multiple LANs with routing (transport nodes) in between
 
 ![Diagram of a multi-network setup with B acting as a transport node](communications/drawings/disco_multi_net.drawio.png){ width=300px }
 
