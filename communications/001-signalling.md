@@ -107,6 +107,22 @@ Here are some use cases:
 ![](https://reticulum.network/gfx/reticulum_logo_512.png)
 
 
-We will be implementing our low-power communications network by making use of a piece of software known as [**Reticulum**](https://reticulum.network/) along with a few other sub-components which we will be described shortly. It must be known that software is normally only 80% of the solution and the rest of 20% hardware. The reason I say 20% is because the first 10% is choosing hardware based on properties like power consumption, modulation techniques and price **but** the second 10% is an easily over-looked one when one gets started building such projects for the very first time. This is the choice that has to be made of which hardware actually _supports the software_ that we choose to run - it's easy to make a mistake here and buy something that you _think_ might work but ends up not working at all.
+We will be implementing our low-power communications network by making use of a piece of software known as [**Reticulum**](https://reticulum.network/) along with a few other sub-components such as hardware like the [**RNode**](https://deavmi.assigned.network/blog/rnode_adventure_part1/) - all of which be described shortly. It must be known that software is normally only 80% of the solution and the rest of 20% hardware. The reason I say 20% is because the first 10% is choosing hardware based on properties like power consumption, modulation techniques and price **but** the second 10% is an easily over-looked one when one gets started building such projects for the very first time. This is the choice that has to be made of which hardware actually _supports the software_ that we choose to run - it's easy to make a mistake here and buy something that you _think_ might work but ends up not working at all.
 
 In this section we will discuss both our software and hardware selection; with descriptions of what each of their respective components provide to our network in terms of functionality.
+
+#### Reticulum
+
+Reticulum is a cryotpgraphically secure mesh routing network that can route data packets over a set of heterogenous interfaces. That's a whole word salad, for let's break each of those concepts down and see how they match up with the aim of this project.
+
+1. _"cryptographically secure"_
+    * This refers to the use of crytography or _the art if hiding "stuff"_.
+    * Normally this means that the software supports encryption - which is to say to hide the data in transit from anyone but the intended recipient.
+    * It also normally refers to the verification of received data - meanining that it has not been manipulated, from its original form since, during transit to its intended destination.
+
+#### Applications
+
+TODO: Meshchat for laptops and desktops
+TODO: Sideband for mobile phones
+TODO: Nomadnet for hackers
+
