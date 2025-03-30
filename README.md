@@ -1,6 +1,8 @@
 Anarchy networks
 ===============
 
+_**A book on building networks for the anarchist.**_
+
 ## Build
 
 Building is as easy as running, from the root of the repository,
