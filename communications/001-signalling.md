@@ -111,7 +111,7 @@ We will be implementing our low-power communications network by making use of a 
 
 In this section we will discuss both our software and hardware selection; with descriptions of what each of their respective components provide to our network in terms of functionality.
 
-#### Reticulum
+#### Our Software choice: _Reticulum_
 
 Reticulum is a cryotpgraphically secure mesh routing network that can route data packets over a set of heterogenous interfaces. That's a whole word salad, for let's break each of those concepts down and see how they match up with the aim of this project.
 
@@ -127,6 +127,17 @@ Reticulum is a cryotpgraphically secure mesh routing network that can route data
     * And _"heteregenous"_? Well, we have actually just answered that. Reticulum doesn't just work over one interface type. It can work over a WiFi link or over a Tor connection online - it has **wide support** for different interface types.
 
 \notebox{Technically speaking the Internet, the one you downloaded this book from, send memes over and receive emails via, \textbf{is} a \textit{"mesh"} network. As stated, however, entry into routing on the Internet at the same level as Internet exchanges is not something I would consider permissionless, not even close.}
+
+---
+
+Let's consider a common scenario for many users of technology. You may very well have a laptop that you are using to read this book and perhaps you have another one in the house somewhere. Knowing that your laptop is a _wire**less**_ device if would have WiFi functionality built-in to it.
+
+WiFi has many different ways of operating however the most common way, especially in home networks, is that of _"AP mode"_ or _access point mode_. This is a mode whereby you have multiple clients called _stations_ that associate with a given access point. To associate with a WiFi access point means that you will receive any data from the network that access point is connected to, this includes computers connected to the access poijt via wired Ethernet but also other wired devices that may be connected to the same (or different _but connected_) access point.
+
+![](communications/drawings/ap_access.drawio.png)
+
+The devices are _associated_ with the same access point, this means that data packets travel from `A` to `B` _via_ the access point `AP` however the way the devices (`A` and `B` see the network from their point of view) is that of the logical link (as shown in the diagram). `A` believes it is directly connected to `B` and vice-versa.
+
 
 #### Applications
 
