@@ -146,7 +146,19 @@ If we know this then it really simplifies our diagram to this:
 
 This is the first step in realizing that if we simply place two devices, running the Reticulum software, onto the same LAN (local area network) or WLAN (wireless area network) then we can have them automatically discover each other and start communicating.
 
-TODO: Add config for `A` and `B` here
+In Reticulum this would mean that we would need to write up the following configuration for **both** nodes `A` and `B` under the `[interfaces]` section:
+
+```{.toml .numberLines}
+[interfaces]
+    [[WiFI interface]]
+        type = AutoInterface
+        devices = wlan0
+        enabled = yes
+```
+
+That is quite literally all it takes for such a basic setup.
+
+---
 
 Now, let's say that node `B` also happens to be on _another_ network, let's say it is plugged into an Ethernet cable that travels over the wall into his neighbors network, of which a third node named `C` is now available.
 
