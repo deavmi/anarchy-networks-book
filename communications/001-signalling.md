@@ -118,7 +118,12 @@ Reticulum is a cryotpgraphically secure mesh routing network that can route data
 1. _"cryptographically secure"_
     * This refers to the use of crytography or _the art if hiding "stuff"_.
     * Normally this means that the software supports encryption - which is to say to hide the data in transit from anyone but the intended recipient.
-    * It also normally refers to the verification of received data - meanining that it has not been manipulated, from its original form since, during transit to its intended destination.
+    * It also normally refers to the verification of received data - meaning that it has not been manipulated, from its original form since, during transit to its intended destination. See it as _tamper protection_.
+2. _"mesh routing network"_
+    * It is a _"routing network"_ in the sense that it can move data or _packets_ from point `A` to be `B` where both may be seperated by intermediary nodes `C`, `D` and `E`.
+    * The _"mesh"_ aspect is normally to imply more heavily that entry into the network is rather easy and that the routing paths can adapt to new comers easily and _without permission_. That's normally what people mean when they talk about _"mesh"_ in the context of _"mesh networking"_.
+
+\notebox{Technically speaking the Internet, the one you downloaded this book from, send memes over and receive emails via, \textbf{is} a \textit{"mesh"} network. As stated, however, entry into routing on the Internet at the same level as Internet exchanges is not something I would consider permissionless, not even close.}
 
 #### Applications
 
