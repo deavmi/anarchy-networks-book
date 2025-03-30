@@ -138,6 +138,8 @@ WiFi has many different ways of operating however the most common way, especiall
 
 The devices are _associated_ with the same access point, this means that data packets travel from `A` to `B` _via_ the access point `AP` however the way the devices (`A` and `B` see the network from their point of view) is that of the logical link (as shown in the diagram). `A` believes it is directly connected to `B` and vice-versa.
 
+\break
+
 If we know this then it really simplifies our diagram to this:
 
 ![Automatic node discovery over a single link](communications/drawings/disco_oneline.drawio.png){ width=300px }
