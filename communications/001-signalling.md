@@ -29,13 +29,13 @@ This constraint allows us to consider various places of installation via various
 
 Such a project involving the fashioning of devices that are to be connected physically (hint: wirelessly) to one another has a problem when one is starting out such a project. Call yourself person $A$ and your potential friend, who wants to join in on this project with you, $B$. There is however, one problem you are far apart from one another albeit in the same town.
 
-![](communications/drawings/comms_distance_people.drawio.png)
+![Distance between nodes](communications/drawings/comms_distance_people.drawio.png){ width=300px }
 
 So we must have a situation where at the very least $A$ and $B$ have line of sight with one another, meaning that if they were to stand on top of their rooves they could see one another. This is, at least where I live, something almost all houses have. The problem now simply becomes the distance of the straight line between $A$ and $B$ - we need some technology that can **for now** bridge this gap.
 
 The reason I say "_for now"_ is because once more people get involved they could setup devices in between people $F$ and $E$ who otherwise would not be able to see each other in a line-of-sight fashion _but_ who can both see person $D$:
 
-![](communications/drawings/lack_of_line_of_sight.drawio.png)
+![Obstructions to wireless node communications](communications/drawings/lack_of_line_of_sight.drawio.png){ width=300px }
 
 However, because we are starting the network from scratch we cannot jump to such an assumption that we will have so many involved on day one, we must be realistic.
 
@@ -71,7 +71,7 @@ This boils down to two things:
 
 Mixing the above with the security aspect means that $A$ should be able to send data to $B$ securely and have $D$, $E$ or $F$ (whatever the combinations may be) route it towards the destination, $B$.
 
-![](communications/drawings/routing.drawio.png)
+![A routed network](communications/drawings/routing.drawio.png){ width=350px }
 
 <!-- underline please -->
 This must ensure that $B$ cannot (to a good degree) be spoofed by some <u>other</u> node that is posing to pose as the _real_ node $B$. Likewise it should be entirely permissionless when any of the nodes shown come online; they should be able to peer with neighboring nodes automatically without user intervention on either nodes' part _or_ the wider network as a whole. This last part is important as well, one should be able to announce whatever services their node is making available to the wider network. Such announcements should then be picked up by each node and stored so that they are aware of such a node's service and how to securely route towards it.
@@ -134,19 +134,31 @@ Let's consider a common scenario for many users of technology. You may very well
 
 WiFi has many different ways of operating however the most common way, especially in home networks, is that of _"AP mode"_ or _access point mode_. This is a mode whereby you have multiple clients called _stations_ that associate with a given access point. To associate with a WiFi access point means that you will receive any data from the network that access point is connected to, this includes computers connected to the access poijt via wired Ethernet but also other wired devices that may be connected to the same (or different _but connected_) access point.
 
-![Access point with two clients](communications/drawings/ap_access.drawio.png)
+![Access point with two clients](communications/drawings/ap_access.drawio.png){ width=300px }
 
 The devices are _associated_ with the same access point, this means that data packets travel from `A` to `B` _via_ the access point `AP` however the way the devices (`A` and `B` see the network from their point of view) is that of the logical link (as shown in the diagram). `A` believes it is directly connected to `B` and vice-versa.
 
 If we know this then it really simplifies our diagram to this:
 
-![Automatic node discovery over a single link](communications/drawings/disco_oneline.drawio.png)
+![Automatic node discovery over a single link](communications/drawings/disco_oneline.drawio.png){ width=300px }
 
 \notebox{What are the \texttt{wlan0} labels in this diagram? Well, if you recall our talk about interfaces earlier these are, in this case, the WiFi interface names on either node. So here node \texttt{A} has a WiFi interface called \texttt{wlan0} and node \texttt{B} also has a WiFi interface similarly named \texttt{wlan0}.}
 
 This is the first step in realizing that if we simply place two devices, running the Reticulum software, onto the same LAN (local area network) or WLAN (wireless area network) then we can have them automatically discover each other and start communicating.
 
-In Reticulum this would mean that we would need to write up the following configuration for **both** nodes `A` and `B` under the `[interfaces]` section:
+In Reticulum this would mean that we would need to write up the following configuration for **both** nodes `A` and `B` under the `[interfaces]` section within the Reticulum configuration file at `~/.reticulum/config`.
+
+So on node `A` add this to your `[interfaces]` section:
+
+```{.toml .numberLines}
+[interfaces]
+    [[WiFI interface]]
+        type = AutoInterface
+        devices = wlan0
+        enabled = yes
+```
+
+And then on node `B`:
 
 ```{.toml .numberLines}
 [interfaces]
